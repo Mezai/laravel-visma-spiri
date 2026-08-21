@@ -4,8 +4,8 @@ namespace Mezai\Visma\Api;
 
 use Mezai\Visma\Client;
 
-abstract class AbstractResource
-{
+abstract class AbstractResource {
+
     protected $client;
 
     public function __construct(Client $client)
@@ -19,8 +19,8 @@ abstract class AbstractResource
      * @param $resource
      * @return mixed
      */
-    abstract public function get($resource);
-
+    abstract public function get($resource); 
+    
     /**
      * Create resource
      *
@@ -28,10 +28,10 @@ abstract class AbstractResource
      * @return mixed
      */
     abstract public function create($resource);
-
+    
 
     abstract public function index();
-
+    
     /**
      * Delete a resource
      *
@@ -41,7 +41,7 @@ abstract class AbstractResource
     abstract public function delete($resource);
 
 
-    /**
+        /**
      * Main API caller
      *
      * @param string $verb
@@ -52,22 +52,24 @@ abstract class AbstractResource
      * @throws ClientException|ServerException|ValidationException
      */
     protected function request(
-        string $verb,
+        string $verb, 
         string $path,
         array $headers = [],
-        ?string $payload = null,
-    ) {
+        ?string $payload = null
+    )
+    {
 
         $provider = $this->client->getProvider();
         $accessToken = $this->client->getToken();
         $baseEndpoint = $this->client->getEndpoint();
         $request = $provider->getAuthenticatedRequest(
             $verb,
-            $baseEndpoint . $path,
-            $accessToken,
+            $baseEndpoint . $path, 
+            $accessToken
         );
 
-        $response = $this->client->getProvider()->getResponse($request);
+        $response = $this->client->getProvider()->getResponse($request);       
+        $status = $response->getStatusCode();
 
 
         switch (true) {
