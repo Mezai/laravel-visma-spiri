@@ -1,13 +1,13 @@
 <?php
 
+namespace Mezai\Visma;
 
 use League\OAuth2\Client\Provider\GenericProvider;
 use League\OAuth2\Client\Token\AccessTokenInterface;
 
-
-class Client 
+class Client
 {
-  /** @var GenericProvider */
+    /** @var GenericProvider */
     private $provider;
 
     /** @var string */
@@ -37,6 +37,12 @@ class Client
         }
 
         return $this->provider;
+    }
+
+
+    public function getEndpoint()
+    {
+        return ('production' === config('visma.environment')) ? config('visma.production.api_url') : config('visma.sandbox.api_url');
     }
 
     public function getAuthorizationUrl(): string
