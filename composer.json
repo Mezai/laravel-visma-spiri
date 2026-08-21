@@ -1,5 +1,13 @@
 {
     "name": "mezai/laravel-visma-spiri",
+    "description": "laravel integration with Visma Spiri api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Johan Tedenmark",
+            "email": "johan.tedenmark@hotmail.se"
+        }
+    ],
     "require": {
         "league/oauth2-client": "^2.9"
     },
