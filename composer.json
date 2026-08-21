@@ -1,0 +1,6 @@
+{
+    "name": "mezai/laravel-visma-spiri",
+    "require": {
+        "league/oauth2-client": "^2.9"
+    }
+}
