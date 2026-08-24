@@ -9,14 +9,29 @@
         }
     ],
     "require": {
-        "league/oauth2-client": "^2.9"
+        "php": "^8.2",
+        "laravel/socialite": "^5.30",
+        "spatie/laravel-package-tools": "^1.93",
+        "guzzlehttp/guzzle": "^7.15",
+        "illuminate/contracts": "*"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.95"
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "pestphp/pest": "^5.1",
+        "orchestra/testbench": "^11.2"
+    },
+    "suggest": {
+        "illuminate/contracts": "Required to use the Laravel integration (^12.0|^13.0).",
+        "illuminate/support": "Required to use the Laravel integration (^12.0|^13.0)."
     },
     "autoload": {
         "psr-4": {
             "Mezai\\Visma\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mezai\\Visma\\Test\\": "tests"
         }
     },
     "extra": {
@@ -25,5 +40,13 @@
                 "Mezai\\Visma\\Providers\\VismaServiceProvider"
             ]
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest"
     }
 }

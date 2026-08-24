@@ -1,0 +1,60 @@
+<?php
+
+namespace Mezai\Visma\TokenStorage;
+
+use Mezai\Visma\Contracts\TokenStorage;
+use Mezai\Visma\Data\StoredToken;
+use Illuminate\Support\Facades\Cache;
+use Laravel\Socialite\Two\Token;
+
+class CacheTokenStorage implements TokenStorage
+{
+    protected string $cacheKey;
+
+    protected ?string $driver;
+
+    public function __construct()
+    {
+        $this->cacheKey = config('visma.provider_configuration.cache.prefix', 'visma.token');
+        $this->driver = config('visma.provider_configuration.cache.driver', null);
+    }
+
+    /**
+     * Store the token data.
+     */
+    public function storeToken(Token $token): void
+    {
+        $storedToken = StoredToken::fromSocialiteToken($token);
+        Cache::driver($this->driver)->put($this->cacheKey, $storedToken->toArray(), now()->addDays(90));
+    }
+
+    /**
+     * Get the token data.
+     */
+    public function getToken(): ?StoredToken
+    {
+        $tokenData = Cache::driver($this->driver)->get($this->cacheKey);
+
+        if (!$tokenData) {
+            return null;
+        }
+
+        return StoredToken::fromArray($tokenData);
+    }
+
+    /**
+     * Delete the token data.
+     */
+    public function deleteToken(): void
+    {
+        Cache::driver($this->driver)->forget($this->cacheKey);
+    }
+
+    /**
+     * Check if a token exists.
+     */
+    public function hasToken(): bool
+    {
+        return Cache::driver($this->driver)->has($this->cacheKey);
+    }
+}
