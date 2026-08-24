@@ -15,6 +15,7 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Mezai\Visma\Exceptions\InvalidConfiguration;
 use Laravel\Socialite\Facades\Socialite;
 use Mezai\Visma\Commands\RefreshVismaAccessToken;
+use Mezai\Visma\Socialite\VismaSocialiteProvider;
 
 class VismaServiceProvider extends PackageServiceProvider
 {
