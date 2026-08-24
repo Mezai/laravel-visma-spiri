@@ -2,6 +2,7 @@
 
 namespace Mezai\Visma\Socialite;
 
+use Illuminate\Support\Arr;
 use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\InvalidStateException;
 use Laravel\Socialite\Two\ProviderInterface;
