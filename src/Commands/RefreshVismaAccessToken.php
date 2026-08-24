@@ -1,5 +1,7 @@
 <?php
 
+namespace Mezai\Visma\Commands;
+
 use Illuminate\Console\Command;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\Token;
