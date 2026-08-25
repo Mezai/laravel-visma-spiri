@@ -38,7 +38,10 @@
         "laravel": {
             "providers": [
                 "Mezai\\Visma\\Providers\\VismaServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Visma": "Mezai\\Visma\\Facades\\Visma"
+            }
         }
     },
     "config": {
