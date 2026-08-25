@@ -15,6 +15,6 @@ trait Readable
 
     public function get(string|int $id): object
     {
-        return $this->client->get($this->getEndpoint() . '/' . $id, $this->query)->{$this->getSingularKey()};
+        return $this->client->get($this->getEndpoint() . '/' . $id, $this->query);
     }
 }

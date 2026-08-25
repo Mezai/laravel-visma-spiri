@@ -6,6 +6,6 @@ trait Createable
 {
     public function create(array $data): object
     {
-        return $this->client->post($this->getEndpoint(), $data)->{$this->getSingularKey()};
+        return $this->client->post($this->getEndpoint(), $data);
     }
 }
