@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Mezai\Visma\Facades;
 
 use Mezai\Visma\Resources\CustomerInvoice;
 use Illuminate\Support\Facades\Facade;
