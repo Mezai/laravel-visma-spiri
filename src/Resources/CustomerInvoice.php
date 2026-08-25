@@ -8,7 +8,7 @@ use Mezai\Visma\Contracts\Resources\Crud\Readable;
 use Mezai\Visma\Contracts\Resources\Filters\FiltersDates;
 use Mezai\Visma\Contracts\Resources\Filters\FiltersFilter;
 
-class CustomerInvoice extends AbstractResource
+class CustomerInvoice extends BaseResource
 {
     use Readable;
     use Createable;
