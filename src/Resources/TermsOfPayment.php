@@ -8,11 +8,6 @@ class TermsOfPayment extends BaseResource
 {
     use Readable;
 
-    public function all(): object
-    {
-        return $this->client->get($this->getEndpoint(), $this->query);
-    }
-
     protected function getEndpoint(): string
     {
         return 'termsofpayments';

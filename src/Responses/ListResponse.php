@@ -6,16 +6,18 @@ use Illuminate\Support\Collection;
 
 class ListResponse
 {
-    public int $totalRecords;
+    public int $totalResults;
     public int $totalPages;
+    public int $pageSize;
     public int $currentPage;
     protected Collection $data;
 
     public function __construct(object $raw)
     {
-        $this->totalRecords = $raw->TotalItemCount;
-        $this->totalPages = $raw->TotalPages;
-        $this->currentPage = $raw->Page;
+        $this->totalResults = $raw->TotalNumberOfResults;
+        $this->totalPages = $raw->TotalNumberOfPages;
+        $this->currentPage = $raw->CurrentPage;
+        $this->pageSize = $raw->PageSize;
         $this->data = collect($raw->{"Data"});
     }
 
