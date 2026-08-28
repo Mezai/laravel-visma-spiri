@@ -14,10 +14,10 @@ class ListResponse
 
     public function __construct(object $raw)
     {
-        $this->totalResults = $raw->TotalNumberOfResults;
-        $this->totalPages = $raw->TotalNumberOfPages;
-        $this->currentPage = $raw->CurrentPage;
-        $this->pageSize = $raw->PageSize;
+        $this->totalResults = $raw->{"Meta"}->TotalNumberOfResults;
+        $this->totalPages = $raw->{"Meta"}->TotalNumberOfPages;
+        $this->currentPage = $raw->{"Meta"}->CurrentPage;
+        $this->pageSize = $raw->{"Meta"}->PageSize;
         $this->data = collect($raw->{"Data"});
     }
 
