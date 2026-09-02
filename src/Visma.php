@@ -5,6 +5,7 @@ namespace Mezai\Visma;
 use Mezai\Visma\Resources\CustomerInvoice;
 use Mezai\Visma\Resources\TermsOfPayment;
 use Mezai\Visma\Resources\Customer;
+use Mezai\Visma\Resources\BankAccount;
 
 class Visma
 {
@@ -26,6 +27,11 @@ class Visma
     public function customers(): Customer
     {
         return new Customer($this->client);
+    }
+
+    public function bankAccounts(): BankAccount
+    {
+        return new BankAccount($this->client);
     }
 
 }
