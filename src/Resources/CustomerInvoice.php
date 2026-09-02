@@ -18,6 +18,11 @@ class CustomerInvoice extends BaseResource
     use FiltersFilter;
 
 
+    public function doPayment($invoiceId, array $data): object
+    {
+        return $this->client->post($this->getEndpoint() . '/' . $invoiceId . '/payments', $data);
+    }
+
     protected function getEndpoint(): string
     {
         return 'customerinvoices';
