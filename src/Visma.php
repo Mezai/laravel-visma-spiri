@@ -6,6 +6,8 @@ use Mezai\Visma\Resources\CustomerInvoice;
 use Mezai\Visma\Resources\TermsOfPayment;
 use Mezai\Visma\Resources\Customer;
 use Mezai\Visma\Resources\BankAccount;
+use Mezai\Visma\Resources\Article;
+
 
 class Visma
 {
@@ -32,6 +34,11 @@ class Visma
     public function bankAccounts(): BankAccount
     {
         return new BankAccount($this->client);
+    }
+
+    public function articles(): Article
+    {
+        return new Article($this->client);
     }
 
 }
