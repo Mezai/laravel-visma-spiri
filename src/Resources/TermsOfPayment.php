@@ -20,6 +20,11 @@ class TermsOfPayment extends BaseResource
         return $this->filter("NameEnglish eq 'Swish direct payment'");
     }
 
+    public function card(): static
+    {
+        return $this->filter("Name eq 'Kortbetalning'");
+    }
+
     protected function getEndpoint(): string
     {
         return 'termsofpayments';
