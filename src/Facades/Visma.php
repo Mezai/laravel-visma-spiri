@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Facade;
  * @method static CustomerInvoice invoices()
  * @method static TermsOfPayment terms()
  * @method static Customer customers()
+ * @method static BankAccount bankAccounts()
+ * @method static Article articles()
+ * @method static Unit units()
+ * @method static ArticleAccountCoding articleaccountcodings()
  **/
 class Visma extends Facade
 {

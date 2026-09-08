@@ -7,6 +7,8 @@ use Mezai\Visma\Resources\TermsOfPayment;
 use Mezai\Visma\Resources\Customer;
 use Mezai\Visma\Resources\BankAccount;
 use Mezai\Visma\Resources\Article;
+use Mezai\Visma\Resources\ArticleAccountCoding;
+use Mezai\Visma\Resources\Unit;
 
 
 class Visma
@@ -39,6 +41,16 @@ class Visma
     public function articles(): Article
     {
         return new Article($this->client);
+    }
+
+    public function units(): Unit
+    {
+        return new Unit($this->client);
+    }
+
+    public function articleaccountcodings(): ArticleAccountCoding
+    {
+        return new ArticleAccountCoding($this->client);
     }
 
 }
