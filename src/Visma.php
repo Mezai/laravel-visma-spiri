@@ -10,7 +10,6 @@ use Mezai\Visma\Resources\Article;
 use Mezai\Visma\Resources\ArticleAccountCoding;
 use Mezai\Visma\Resources\Unit;
 
-
 class Visma
 {
     public function __construct(
