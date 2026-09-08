@@ -32,7 +32,7 @@ class Visma
         return new Customer($this->client);
     }
 
-    public function bankAccounts(): BankAccount
+    public function bankaccounts(): BankAccount
     {
         return new BankAccount($this->client);
     }
